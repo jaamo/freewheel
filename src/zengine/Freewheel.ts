@@ -24,7 +24,7 @@ export class Freewheel {
     // Instruments
     const piano = new Piano({
       velocities: 5,
-      url: "http://localhost:3000/samples/piano",
+      url: "/samples/piano",
       volume: {
         harmonics: -12,
         keybed: -12,
