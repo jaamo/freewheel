@@ -14,11 +14,29 @@
 
 ## Sound layers
 
-- Atmosphere (birds, nature, waves)
-- Strings (classic strings)
-- Strings #2 (flute, horns)
-- Piano or plucked instrument
-- Breating guidance
+Atmosphere
+
+- Forest
+- Waves
+
+Main strings
+
+- Strings 1
+- Strings 2
+- Strings 3
+
+Pad
+
+- Male choir
+- Horns
+
+Melody
+
+- Piano
+- Harp
+- Acoustic guitar
+
+Breating guidance
 
 ## Random
 

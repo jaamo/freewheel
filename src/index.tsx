@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { Freewheel } from "./zengine/Freewheel";
+import { Freewheel } from "./freewheel/Freewheel";
 
 document.addEventListener("click", () => {
   new Freewheel();

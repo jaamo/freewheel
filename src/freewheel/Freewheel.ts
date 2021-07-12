@@ -2,11 +2,14 @@ import * as Tone from "tone";
 import { Piano } from "@tonejs/piano";
 import { shuffleArray } from "./helpers/shuffleArray";
 import { changeOctave } from "./helpers/changeOctave";
+import { PadInstrument } from "./instruments/PadInstrument";
 
 export class Freewheel {
+  kukka: 1;
+
   constructor() {
     console.log("Freewheel meditation soundscape engine initializing...");
-
+    this.kukka = 1;
     const chordProgressions = [
       [
         ["C2", "E2", "G2"],
@@ -68,26 +71,19 @@ export class Freewheel {
         E3: "E3.wav",
         F3: "F3.wav",
         "F#3": "Fs3.wav",
+        G3: "G3.wav",
+        "G#3": "Gs3.wav",
+        A3: "A3.wav",
+        "A#3": "As3.wav",
+        B3: "B3.wav",
       },
       release: 1,
       baseUrl: "/samples/strings/violin/",
     }).toDestination();
     strings.volume.value = -20;
 
-    const choir = new Tone.Sampler({
-      urls: {
-        C2: "C2.wav",
-        "C#2": "Cs2.wav",
-        D2: "D2.wav",
-        "D#2": "Ds2.wav",
-        E2: "E2.wav",
-        F2: "F2.wav",
-        "F#2": "Fs2.wav",
-      },
-      release: 1,
-      baseUrl: "/samples/strings/male-choir/",
-    }).toDestination();
-    choir.volume.value = -10;
+    const padInstrument = new PadInstrument();
+    padInstrument.load();
 
     piano.load();
     // piano.load().then(() => {
@@ -140,9 +136,8 @@ export class Freewheel {
           "+1n"
         );
         if (currentChord === 2) {
-          choir.triggerAttackRelease(
-            chordProgressions[currentChordProgression][currentChord][0],
-            "+1n"
+          padInstrument.trigger(
+            chordProgressions[currentChordProgression][currentChord][0]
           );
         }
         currentChord = (currentChord + 1) % 4;
